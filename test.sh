@@ -1,5 +1,5 @@
 #!/bin/bash
 
-for distribution in `ls "distributions"` ; do
-  ./distributions/${distribution}/setup.sh
+for distribution in "ubuntu" ; do
+  ./test/bats/bin/bats $distribution.bats
 done

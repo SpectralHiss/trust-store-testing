@@ -1,5 +1,9 @@
+BATS = test/bats test/test-helper/bats-assert test/test-helper/bats-support
 
-test: cert/tls.crt run-target-server
+$(BATS) &:
+	git submodule update
+
+test: cert/tls.crt $(BATS) run-target-server
 	./test.sh
 
 .PHONY: run-target-server
