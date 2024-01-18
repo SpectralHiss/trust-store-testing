@@ -9,8 +9,8 @@ test: cert/tls.crt $(BATS) run-target-server
 .PHONY: run-target-server
 run-target-server: cert/tls.crt
 	@-docker network create trust-store-testing
-	docker build -t self-signed-server .
-	docker run --network trust-store-testing --name self-signed-server self-signed-server &
+	@-docker build -t self-signed-server .
+	@-docker run --network trust-store-testing --name self-signed-server self-signed-server &
 
 validate-server:
 	docker run -it --network trust-store-testing curlimages/curl -k -f https://self-signed-server
