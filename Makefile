@@ -6,9 +6,9 @@ $(BATS) &:
 test: cert/tls.crt $(BATS) run-target-server
 	./test.sh
 
-
 test-%:
 	./test/bats/bin/bats $*.bats
+	container-diff diff --type=file --json daemon://$*:pre-trust daemon://$*:post-trust > $*-trust-diff.json    
 
 .PHONY: run-target-server
 run-target-server: cert/tls.crt
@@ -29,7 +29,6 @@ stop-target-server:
 	@-docker stop self-signed-server
 	@-docker rm self-signed-server
 
-
 cert/root.crt:
 	openssl req  -nodes -new -x509  -keyout ./cert/root.key -out ./cert/root.crt \
     -subj "/C=US/ST=State/L=City/O=company/OU=Com/CN=CA"
@@ -38,4 +37,3 @@ cert/tls.crt: cert/root.crt
 	openssl req  -nodes -new -x509 -CA ./cert/root.crt -CAkey ./cert/root.key  -keyout ./cert/tls.key -out ./cert/tls.crt \
     -subj "/C=US/ST=State/L=City/O=company/OU=Com/CN=self-signed-server"
 	
-

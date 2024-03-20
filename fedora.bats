@@ -16,7 +16,7 @@ function setup() {
   _common_setup
 
   docker run -d --rm -i --network trust-store-testing --name $CONTAINER_NAME ${IMAGE}${VERSION} "/bin/sh" "-c" "sleep 10000"
-  docker cp -a ${SCRIPT_DIR}/../bin/curl-amd64 $CONTAINER_NAME:/usr/bin/curl
+  docker exec "${CONTAINER_NAME}" yum update && yum install curl -y 
   update_trust_store
 }
 
