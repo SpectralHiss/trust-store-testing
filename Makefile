@@ -6,6 +6,10 @@ $(BATS) &:
 test: cert/tls.crt $(BATS) run-target-server
 	./test.sh
 
+
+test-%:
+	./test/bats/bin/bats $*.bats
+
 .PHONY: run-target-server
 run-target-server: cert/tls.crt
 	@-docker network create trust-store-testing
