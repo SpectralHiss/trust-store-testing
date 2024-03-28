@@ -1,3 +1,15 @@
+# For details on some of these "prelude" settings, see:
+# https://clarkgrubb.com/makefile-style-guide
+
+MAKEFLAGS += --warn-undefined-variables --no-builtin-rules
+SHELL := /usr/bin/env bash
+.SHELLFLAGS := -uo pipefail -c
+.DEFAULT_GOAL := help
+.DELETE_ON_ERROR:
+.SUFFIXES:
+
+include make/website.mk 
+
 BATS = test/bats test/test-helper/bats-assert test/test-helper/bats-support
 
 $(BATS) &:
