@@ -1,0 +1,27 @@
+[
+  {
+    "Image1": "ubuntu:pre-trust",
+    "Image2": "ubuntu:post-trust",
+    "DiffType": "File",
+    "Diff": {
+      "Adds": [
+        {
+          "Name": "/etc/ssl/certs/fd6a59ac.0",
+          "Size": 8
+        },
+        {
+          "Name": "/etc/ssl/certs/root.pem",
+          "Size": 41
+        }
+      ],
+      "Dels": null,
+      "Mods": [
+        {
+          "Name": "/etc/ssl/certs/ca-certificates.crt",
+          "Size1": 208567,
+          "Size2": 209869
+        }
+      ]
+    }
+  }
+]

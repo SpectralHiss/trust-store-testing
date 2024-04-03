@@ -12,7 +12,9 @@ function update_trust_store(){
   docker exec -it $CONTAINER_NAME apt install -y ca-certificates
   docker exec -it $CONTAINER_NAME mkdir -p /usr/local/share/ca-certificates
   docker cp "$SCRIPT_DIR/../cert/root.crt" $CONTAINER_NAME:/usr/local/share/ca-certificates/
+  docker commit -m "Image before nginx cert added to trust store" $CONTAINER_NAME ubuntu:pre-trust
   docker exec -it $CONTAINER_NAME update-ca-certificates
+  docker commit -m "Image after nginx cert added to trust store" $CONTAINER_NAME ubuntu:post-trust
 }
 
 function setup() {
@@ -20,7 +22,7 @@ function setup() {
   _common_setup
 
   docker run -d --rm -i --network trust-store-testing --name $CONTAINER_NAME "${IMAGE}${VERSION}" "/bin/sh" "-c" "sleep 10000"
-  docker exec "${CONTAINER_NAME}" sudo apt update -y && sudo  apt install curl -y
+  docker exec "${CONTAINER_NAME}" sh -c "apt update -y -q &&  apt install curl -y -q"
   update_trust_store
  
 }

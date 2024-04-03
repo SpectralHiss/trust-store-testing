@@ -1,0 +1,8 @@
+update_trust_store () 
+{ 
+    docker exec -it $CONTAINER_NAME mkdir -p /etc/pki/ca-trust/source/anchors/;
+    docker cp "$SCRIPT_DIR/../cert/root.crt" $CONTAINER_NAME:/etc/pki/ca-trust/source/anchors/;
+    docker commit -m "Image before nginx cert added to trust store" $CONTAINER_NAME fedora:pre-trust;
+    docker exec -it $CONTAINER_NAME update-ca-trust;
+    docker commit -m "Image after nginx cert added to trust store" $CONTAINER_NAME fedora:post-trust
+}

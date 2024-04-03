@@ -1,0 +1,43 @@
+[
+  {
+    "Image1": "ubi_8:pre-trust",
+    "Image2": "ubi_8:post-trust",
+    "DiffType": "File",
+    "Diff": {
+      "Adds": null,
+      "Dels": null,
+      "Mods": [
+        {
+          "Name": "/etc/pki/ca-trust/extracted/openssl/ca-bundle.trust.crt",
+          "Size1": 623471,
+          "Size2": 624803
+        },
+        {
+          "Name": "/etc/pki/ca-trust/extracted/pem/objsign-ca-bundle.pem",
+          "Size1": 495529,
+          "Size2": 496837
+        },
+        {
+          "Name": "/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem",
+          "Size1": 222082,
+          "Size2": 223390
+        },
+        {
+          "Name": "/etc/pki/ca-trust/extracted/pem/email-ca-bundle.pem",
+          "Size1": 170226,
+          "Size2": 171534
+        },
+        {
+          "Name": "/etc/pki/ca-trust/extracted/java/cacerts",
+          "Size1": 161817,
+          "Size2": 162763
+        },
+        {
+          "Name": "/etc/pki/ca-trust/extracted/edk2/cacerts.bin",
+          "Size1": 161259,
+          "Size2": 162222
+        }
+      ]
+    }
+  }
+]

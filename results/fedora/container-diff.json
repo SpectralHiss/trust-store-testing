@@ -1,0 +1,101 @@
+[
+  {
+    "Image1": "fedora:pre-trust",
+    "Image2": "fedora:post-trust",
+    "DiffType": "File",
+    "Diff": {
+      "Adds": [
+        {
+          "Name": "/etc/pki/ca-trust/extracted/pem/directory-hash/0d351471.0",
+          "Size": 6
+        },
+        {
+          "Name": "/etc/pki/ca-trust/extracted/pem/directory-hash/CA.pem",
+          "Size": 1302
+        },
+        {
+          "Name": "/etc/pki/ca-trust/extracted/pem/directory-hash/fd6a59ac.0",
+          "Size": 6
+        }
+      ],
+      "Dels": null,
+      "Mods": [
+        {
+          "Name": "/etc/pki/ca-trust/extracted/openssl/ca-bundle.trust.crt",
+          "Size1": 623471,
+          "Size2": 624803
+        },
+        {
+          "Name": "/etc/pki/ca-trust/extracted/pem/objsign-ca-bundle.pem",
+          "Size1": 495529,
+          "Size2": 496837
+        },
+        {
+          "Name": "/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem",
+          "Size1": 222082,
+          "Size2": 223390
+        },
+        {
+          "Name": "/etc/pki/ca-trust/extracted/pem/email-ca-bundle.pem",
+          "Size1": 170226,
+          "Size2": 171534
+        },
+        {
+          "Name": "/etc/pki/ca-trust/extracted/java/cacerts",
+          "Size1": 161817,
+          "Size2": 162763
+        },
+        {
+          "Name": "/etc/pki/ca-trust/extracted/edk2/cacerts.bin",
+          "Size1": 161259,
+          "Size2": 162222
+        },
+        {
+          "Name": "/var/cache/dnf/fedora-845d89688cb28f31/metalink.xml",
+          "Size1": 23627,
+          "Size2": 23627
+        },
+        {
+          "Name": "/var/log/dnf.log",
+          "Size1": 20722,
+          "Size2": 20725
+        },
+        {
+          "Name": "/var/cache/dnf/updates-7da5a72b0a306ada/metalink.xml",
+          "Size1": 18578,
+          "Size2": 18578
+        },
+        {
+          "Name": "/var/log/dnf.librepo.log",
+          "Size1": 4366,
+          "Size2": 4314
+        },
+        {
+          "Name": "/var/cache/dnf/fedora-cisco-openh264-3542736af0455d59/metalink.xml",
+          "Size1": 989,
+          "Size2": 989
+        },
+        {
+          "Name": "/var/log/hawkey.log",
+          "Size1": 60,
+          "Size2": 60
+        },
+        {
+          "Name": "/var/log/dnf.rpm.log",
+          "Size1": 58,
+          "Size2": 58
+        },
+        {
+          "Name": "/var/lib/dnf/repos/fedora-845d89688cb28f31/countme",
+          "Size1": 26,
+          "Size2": 12
+        },
+        {
+          "Name": "/var/lib/dnf/repos/updates-7da5a72b0a306ada/countme",
+          "Size1": 12,
+          "Size2": 12
+        }
+      ]
+    }
+  }
+]

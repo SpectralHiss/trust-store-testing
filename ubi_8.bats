@@ -8,9 +8,9 @@ function update_trust_store(){
   # This is what actually sets the TLS trust store for this distribution
   docker exec -it $CONTAINER_NAME mkdir -p /etc/pki/ca-trust/source/anchors
   docker cp "$SCRIPT_DIR/../cert/root.crt" $CONTAINER_NAME:/etc/pki/ca-trust/source/anchors
-  docker commit -m "Image before nginx cert added to trust store" $CONTAINER_NAME ubi8:pre-trust
+  docker commit -m "Image before nginx cert added to trust store" $CONTAINER_NAME ubi_8:pre-trust
   docker exec -it $CONTAINER_NAME update-ca-trust
-  docker commit -m "Image after nginx cert added to trust store" $CONTAINER_NAME ubi8:post-trust
+  docker commit -m "Image after nginx cert added to trust store" $CONTAINER_NAME ubi_8:post-trust
 }
 
 function setup() {
